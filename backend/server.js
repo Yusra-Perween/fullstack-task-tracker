@@ -21,10 +21,7 @@ app.get('/', (req, res) => {
 
 // Database connection
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task-tracker', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task-tracker')
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
